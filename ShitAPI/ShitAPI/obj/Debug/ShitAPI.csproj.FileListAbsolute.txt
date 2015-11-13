@@ -1,0 +1,6 @@
+c:\users\weiwei\documents\visual studio 2012\Projects\ShitAPI\ShitAPI\bin\Debug\ShitAPI.exe
+c:\users\weiwei\documents\visual studio 2012\Projects\ShitAPI\ShitAPI\bin\Debug\ShitAPI.pdb
+c:\users\weiwei\documents\visual studio 2012\Projects\ShitAPI\ShitAPI\obj\Debug\ShitAPI.csprojResolveAssemblyReference.cache
+c:\users\weiwei\documents\visual studio 2012\Projects\ShitAPI\ShitAPI\obj\Debug\ShitAPI.exe
+c:\users\weiwei\documents\visual studio 2012\Projects\ShitAPI\ShitAPI\obj\Debug\ShitAPI.pdb
+C:\Users\weiwei\Documents\Visual Studio 2012\Projects\ShitAPI\ShitAPI\bin\Debug\ShitAPI.exe.config
