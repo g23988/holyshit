@@ -118,7 +118,7 @@ namespace testAPI
                     jsonlist.Add(new Toilet { version = version,toiletID = toiletID, occupy = false, command = "toilet",unixtime = unixTime });
                     break;
                 case "closelock":
-                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, occupy = true, command = "toilet", unixtime = unixTime });
+                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, occupy = true, command = "lock", unixtime = unixTime });
                     break;
                 case "openlock":
                     jsonlist.Add(new Toilet { version = version, toiletID = toiletID, occupy = false, command = "lock", unixtime = unixTime });
