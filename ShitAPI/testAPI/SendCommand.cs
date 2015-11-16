@@ -49,6 +49,34 @@ namespace testAPI
             }
         }
 
+        //開鎖事件
+        public void openlock() {
+            string result = createList("openlock");
+            if (sendMessage(result))
+            {
+                Console.WriteLine(result + " 成功。");
+            }
+            else
+            {
+                Console.WriteLine(result + " 失敗。");
+            }
+        
+        }
+        //關鎖事件
+        public void closelock()
+        {
+            string result = createList("closelock");
+            if (sendMessage(result))
+            {
+                Console.WriteLine(result + " 成功。");
+            }
+            else
+            {
+                Console.WriteLine(result + " 失敗。");
+            }
+
+        }
+
         //傳送事件給web
         private bool sendMessage(string message) {
             bool success = false;
@@ -59,8 +87,10 @@ namespace testAPI
                 nc["jsondata"] = message;
                 byte[] result = wc.UploadValues(targetURL,nc);
                 string resultBack = Encoding.UTF8.GetString(result);
-                //Console.WriteLine(resultBack);
+                Console.WriteLine( targetURL+" 回傳:");
+                Console.WriteLine(resultBack);
                 success = true;
+                Console.WriteLine("======================================");
             }
             catch (Exception)
             {
@@ -86,6 +116,12 @@ namespace testAPI
                     break;
                 case "release":
                     jsonlist.Add(new Toilet { version = version,toiletID = toiletID, occupy = false, command = "toilet",unixtime = unixTime });
+                    break;
+                case "closelock":
+                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, occupy = true, command = "toilet", unixtime = unixTime });
+                    break;
+                case "openlock":
+                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, occupy = false, command = "lock", unixtime = unixTime });
                     break;
                 default:
                     break;

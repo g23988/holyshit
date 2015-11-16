@@ -24,7 +24,7 @@ namespace testAPI
             while (open)
             {
                 Console.WriteLine("======================================");
-                Console.WriteLine("1.發出廁所占用事件。\n2.發出廁所釋放事件。");
+                Console.WriteLine("1.發出廁所占用事件。\n2.發出廁所釋放事件。\n3.發出廁所鎖門事件。\n4.發出廁所開鎖事件。");
                 string command = Console.ReadLine();
                 switch (command)
                 {
@@ -36,6 +36,14 @@ namespace testAPI
                         newCommand.release();
                         Console.WriteLine("已發送廁所釋放事件。");
                         break;
+                    case "3":
+                        newCommand.closelock();
+                        Console.WriteLine("已發送廁所鎖門事件。");
+                        break;
+                    case "4":
+                        newCommand.openlock();
+                        Console.WriteLine("已發送廁所開鎖事件。");
+                        break;
                     default:
                         open = false;
                         Console.WriteLine("不在動作清單中的命令。");
@@ -44,7 +52,7 @@ namespace testAPI
             }
 
             
-            Console.WriteLine("任意鍵繼續...");
+            Console.WriteLine("任意鍵結束...");
             Console.ReadLine();
         }
     }
