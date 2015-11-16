@@ -14,7 +14,7 @@ namespace testAPI
         {
             bool open = true;
             string targetURL = config.postURL;
-            Console.WriteLine("開發用發訊器 v 1.0");
+            Console.WriteLine(config.varsion);
             Console.WriteLine("api目標為:" + targetURL);
             Console.WriteLine("廁所id ?");
             int toiletID = Convert.ToInt32(Console.ReadLine());
