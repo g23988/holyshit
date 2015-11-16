@@ -32,7 +32,7 @@ class Program
         string context = "";
         Boolean succeeded = false;
         int count = 0;
-        SerialPort serialPort = new SerialPort("COM4", 9600, Parity.None, 8, StopBits.One);
+        SerialPort serialPort = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
         while (!succeeded)
         {
             try
