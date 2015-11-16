@@ -11,6 +11,7 @@ namespace testAPI
         public int toiletID { get; set; }
         public string command { get; set; }
         public bool occupy { get; set; }
+        public long unixtime { get; set; }
         
     }
 }

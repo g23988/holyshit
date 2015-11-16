@@ -74,14 +74,18 @@ namespace testAPI
         //創造json
         private string createList(string command)
         {
+            //取得unix 時間
+            long epochTicks = new DateTime(1970, 1, 1).Ticks;
+            long unixTime = ((DateTime.UtcNow.Ticks - epochTicks) / TimeSpan.TicksPerSecond);
+            //創造清單
             List<Toilet> jsonlist = new List<Toilet>();
             switch (command)
             {
                 case "occupy":
-                    jsonlist.Add(new Toilet { version = version,toiletID = toiletID, occupy = true ,command = "toilet"});
+                    jsonlist.Add(new Toilet { version = version,toiletID = toiletID, occupy = true ,command = "toilet",unixtime = unixTime});
                     break;
                 case "release":
-                    jsonlist.Add(new Toilet { version = version,toiletID = toiletID, occupy = false, command = "toilet" });
+                    jsonlist.Add(new Toilet { version = version,toiletID = toiletID, occupy = false, command = "toilet",unixtime = unixTime });
                     break;
                 default:
                     break;
