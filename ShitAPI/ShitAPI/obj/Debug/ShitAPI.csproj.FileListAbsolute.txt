@@ -4,15 +4,15 @@ c:\users\weiwei\documents\visual studio 2012\Projects\ShitAPI\ShitAPI\obj\Debug\
 c:\users\weiwei\documents\visual studio 2012\Projects\ShitAPI\ShitAPI\obj\Debug\ShitAPI.exe
 c:\users\weiwei\documents\visual studio 2012\Projects\ShitAPI\ShitAPI\obj\Debug\ShitAPI.pdb
 C:\Users\weiwei\Documents\Visual Studio 2012\Projects\ShitAPI\ShitAPI\bin\Debug\ShitAPI.exe.config
-<<<<<<< HEAD
 D:\holyshit\holyshit\ShitAPI\ShitAPI\bin\Debug\ShitAPI.exe.config
 D:\holyshit\holyshit\ShitAPI\ShitAPI\obj\Debug\ShitAPI.exe
 D:\holyshit\holyshit\ShitAPI\ShitAPI\obj\Debug\ShitAPI.pdb
-=======
 D:\holyshit\ShitAPI\ShitAPI\bin\Debug\ShitAPI.exe.config
 D:\holyshit\ShitAPI\ShitAPI\obj\Debug\ShitAPI.exe
 D:\holyshit\ShitAPI\ShitAPI\obj\Debug\ShitAPI.pdb
 D:\holyshit\ShitAPI\ShitAPI\bin\Debug\ShitAPI.exe
 D:\holyshit\ShitAPI\ShitAPI\bin\Debug\ShitAPI.pdb
 D:\holyshit\ShitAPI\ShitAPI\obj\Debug\ShitAPI.csprojResolveAssemblyReference.cache
->>>>>>> origin/master
+D:\holyshit\holyshit\ShitAPI\ShitAPI\bin\Debug\ShitAPI.exe
+D:\holyshit\holyshit\ShitAPI\ShitAPI\bin\Debug\ShitAPI.pdb
+D:\holyshit\holyshit\ShitAPI\ShitAPI\obj\Debug\ShitAPI.csprojResolveAssemblyReference.cache
