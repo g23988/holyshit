@@ -24,25 +24,29 @@ namespace testAPI
             while (open)
             {
                 Console.WriteLine("======================================");
-                Console.WriteLine("1.發出廁所占用事件。\n2.發出廁所釋放事件。\n3.發出廁所鎖門事件。\n4.發出廁所開鎖事件。");
+                Console.WriteLine("1.發出廁所占用事件。\n2.發出廁所釋放事件。\n3.發出廁所鎖門事件。\n4.發出廁所開鎖事件。\n5.發出RFID事件。");
                 string command = Console.ReadLine();
                 switch (command)
                 {
                     case "1":
                         newCommand.occupy();
-                        Console.WriteLine("已發送廁所占用事件。");
+                        Console.WriteLine("已發送廁所占用事件。 toilet");
                         break;
                     case "2":
                         newCommand.release();
-                        Console.WriteLine("已發送廁所釋放事件。");
+                        Console.WriteLine("已發送廁所釋放事件。 toilet");
                         break;
                     case "3":
                         newCommand.closelock();
-                        Console.WriteLine("已發送廁所鎖門事件。");
+                        Console.WriteLine("已發送廁所鎖門事件。 lock");
                         break;
                     case "4":
                         newCommand.openlock();
-                        Console.WriteLine("已發送廁所開鎖事件。");
+                        Console.WriteLine("已發送廁所開鎖事件。 lock");
+                        break;
+                    case "5":
+                        newCommand.beepRFID();
+                        Console.WriteLine("已發送RFID事件。 beep");
                         break;
                     default:
                         open = false;

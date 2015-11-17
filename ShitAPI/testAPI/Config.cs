@@ -8,7 +8,7 @@ namespace testAPI
     class Config
     {
         //版本
-        private string _varsion = "dev v1.2";
+        private string _varsion = "dev v1.3";
         public string varsion
         {
             get { return _varsion; }

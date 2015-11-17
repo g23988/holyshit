@@ -77,6 +77,19 @@ namespace testAPI
 
         }
 
+        //RFID卡事件
+        public void beepRFID() {
+            string result = createList("beepRFID");
+            if (sendMessage(result))
+            {
+                Console.WriteLine(result + " 成功。");
+            }
+            else
+            {
+                Console.WriteLine(result + " 失敗。");
+            }
+        }
+
         //傳送事件給web
         private bool sendMessage(string message) {
             bool success = false;
@@ -112,16 +125,19 @@ namespace testAPI
             switch (command)
             {
                 case "occupy":
-                    jsonlist.Add(new Toilet { version = version,toiletID = toiletID, occupy = true ,command = "toilet",unixtime = unixTime});
+                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, command = "toilet", value = "true", unixtime = unixTime });
                     break;
                 case "release":
-                    jsonlist.Add(new Toilet { version = version,toiletID = toiletID, occupy = false, command = "toilet",unixtime = unixTime });
+                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, command = "toilet", value = "false", unixtime = unixTime });
                     break;
                 case "closelock":
-                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, occupy = true, command = "lock", unixtime = unixTime });
+                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, command = "lock", value = "true", unixtime = unixTime });
                     break;
                 case "openlock":
-                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, occupy = false, command = "lock", unixtime = unixTime });
+                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, command = "lock", value = "false", unixtime = unixTime });
+                    break;
+                case "beepRFID":
+                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, command = "beep", value = "030ac102" , unixtime = unixTime });
                     break;
                 default:
                     break;
