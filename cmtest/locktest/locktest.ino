@@ -13,6 +13,7 @@ int switchon = 0;
  byte blockcontent[16] = {"Hello world"};  
  byte readbackblock[18];  
 String rfidUid = "";
+int sameRfidCount = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -33,6 +34,12 @@ void loop() {
   // testlock
   testLock();
   // test rfid
+  testRfid();
+  //next
+  delay(100);
+}
+
+void testRfid(){
   mfrc522.PCD_Init();  
      if ( ! mfrc522.PICC_IsNewCardPresent()) {  
        return;  
@@ -46,13 +53,17 @@ void loop() {
       rfidUid2 += String(mfrc522.uid.uidByte[i] < 0x10 ? "0" : "");
       rfidUid2 += String(mfrc522.uid.uidByte[i], HEX);
     }
-  if(rfidUid != rfidUid2){
+  if(rfidUid != rfidUid2 || sameRfidCount == 3){
       Serial.println("beep:"+rfidUid2);    
       rfidUid = rfidUid2;
+      sameRfidCount = 0;
     }
-  //next
-  delay(100);
-}
+  else{
+    sameRfidCount++;
+    }
+  
+  }
+
 
 void testLock(){
   
