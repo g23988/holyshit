@@ -1,6 +1,6 @@
 //lockuse
-int outputpin = 4;
-int inputpin = 2 ;
+int outputpin = 8;
+int inputpin = 7 ;
 int switchon = 0;
 //rfid use
 #include <SPI.h>
@@ -24,7 +24,7 @@ void setup() {
   // rfid use
   SPI.begin();  
    mfrc522.PCD_Init();  
-   Serial.println("Scan a MIFARE Classic card");  
+   //Serial.println("Scan a MIFARE Classic card");  
    for (byte i = 0; i < 6; i++) {  
      key.keyByte[i] = 0xFF;  
    }  

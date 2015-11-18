@@ -21,18 +21,18 @@ namespace testAPI
         public SendCommand(Config info){
             toiletID = info.toiletID;
             targetURL = info.postURL;
-            version = info.varsion;
+            version = info.version;
         }
 
         //占用事件
         public void occupy(){
             string result = createList("occupy");
             if (sendMessage(result)) {
-                Console.WriteLine(result+" 成功。");
+                Console.WriteLine(result + " 成功。");
             }
             else
             {
-                Console.WriteLine(result + " 失敗。");
+                Console.WriteLine(result + " 失敗。"); 
             }
         }
 
@@ -78,8 +78,8 @@ namespace testAPI
         }
 
         //RFID卡事件
-        public void beepRFID() {
-            string result = createList("beepRFID");
+        public void beepRFID(string value="030ac102") {
+            string result = createList("beepRFID", value);
             if (sendMessage(result))
             {
                 Console.WriteLine(result + " 成功。");
@@ -115,7 +115,7 @@ namespace testAPI
 
 
         //創造json
-        private string createList(string command)
+        private string createList(string command,string value="")
         {
             //取得unix 時間
             long epochTicks = new DateTime(1970, 1, 1).Ticks;
@@ -137,7 +137,7 @@ namespace testAPI
                     jsonlist.Add(new Toilet { version = version, toiletID = toiletID, command = "lock", value = "false", unixtime = unixTime });
                     break;
                 case "beepRFID":
-                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, command = "beep", value = "030ac102" , unixtime = unixTime });
+                    jsonlist.Add(new Toilet { version = version, toiletID = toiletID, command = "beep", value = value, unixtime = unixTime });
                     break;
                 default:
                     break;
