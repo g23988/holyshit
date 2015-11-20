@@ -58,5 +58,14 @@ namespace testAPI.Properties {
                 return ((bool)(this["testMode"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1.4")]
+        public string version {
+            get {
+                return ((string)(this["version"]));
+            }
+        }
     }
 }

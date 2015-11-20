@@ -8,7 +8,7 @@ namespace testAPI
     class Config
     {
         //版本
-        private string _version = "1.4";
+        private string _version = Properties.Settings.Default["version"].ToString();
         public string version
         {
             get { return _version; }
