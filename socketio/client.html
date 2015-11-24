@@ -40,12 +40,20 @@ var items = Array('賽在滾','拉屎王','王八烏龜蛋','食屎王','餔雪�
 		var data = OBJjson[0];
 		
 		switch(data.command){
-			case 'toilet':
+			case 'lock':
 				if(data.value=="true"){ 
 					$('#messages').append($('<li>').text('[系統]廁所'+data.toiletID+'，有人關門了！'));
 				}
 				else{
 					$('#messages').append($('<li>').text('[系統]廁所'+data.toiletID+'，開門了！快去搶！'));
+					}
+				break;
+			case 'toilet':
+				if(data.value=="true"){ 
+					$('#messages').append($('<li>').text('[系統]廁所'+data.toiletID+'，有人坐下了！'));
+				}
+				else{
+					$('#messages').append($('<li>').text('[系統]廁所'+data.toiletID+'，離開馬桶了！快去排隊！'));
 					}
 				break;
 			case 'beep':
