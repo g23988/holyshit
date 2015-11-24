@@ -43,12 +43,22 @@ namespace testAPI
                         case "Lock":
                             if (submessage[1]=="open")
                             {
-                                newCommand.release();      
+                                newCommand.openlock();      
                             }
                             if (submessage[1]=="close")
                             {
-                                newCommand.occupy();
+                                newCommand.closelock();
                                 
+                            }
+                            break;
+                        case "Toilet":
+                            if (submessage[1]=="in")
+                            {
+                                newCommand.occupy();      
+                            }
+                            if (submessage[1]=="out")
+                            {
+                                newCommand.release();
                             }
                             break;
                         case "beep":

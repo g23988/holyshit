@@ -25,15 +25,6 @@ namespace testAPI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/index.aspx")]
-        public string postURL {
-            get {
-                return ((string)(this["postURL"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("COM3,COM4")]
         public string serialPort {
             get {
@@ -65,6 +56,15 @@ namespace testAPI.Properties {
         public string version {
             get {
                 return ((string)(this["version"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3000/holyshit")]
+        public string postURL {
+            get {
+                return ((string)(this["postURL"]));
             }
         }
     }

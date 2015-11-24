@@ -1,7 +1,10 @@
 //lockuse
 int outputpin = 8;
-int inputpin = 7 ;
+int inputpin = 7   ;
 int switchon = 0;
+//toilet use
+int toiletinputpin = 19;
+int toiletswitchon = 0;
 //rfid use
 #include <SPI.h>
 #include <MFRC522.h>
@@ -21,6 +24,8 @@ void setup() {
   pinMode(outputpin,OUTPUT);
   pinMode(inputpin,INPUT);
   digitalWrite(outputpin,HIGH);
+  // toiletuse
+  pinMode(toiletinputpin,INPUT);
   // rfid use
   SPI.begin();  
    mfrc522.PCD_Init();  
@@ -36,6 +41,7 @@ void loop() {
   // test rfid
   testRfid();
   //next
+  testToilet();
   delay(100);
 }
 
@@ -78,5 +84,20 @@ void testLock(){
        switchon = !switchon;
     }
   
+  
+  }
+
+void testToilet(){
+   
+  if(toiletswitchon != digitalRead(toiletinputpin)){
+      if (digitalRead(toiletinputpin) == 0){
+         Serial.println("Toilet:in");
+        }
+      else{
+         Serial.println("Toilet:out");
+        }
+       
+       toiletswitchon = !toiletswitchon;
+    }
   
   }
